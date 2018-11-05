@@ -4,14 +4,15 @@ RUN apt-get update -yqq \
     && apt-get install git wget unzip zlibc zlib1g zlib1g-dev libxml2-dev libssl-dev libicu-dev g++ apt-transport-https -yqq
 
 # install general php extensions
-RUN docker-php-ext-install pdo_mysql \
-    && docker-php-ext-install mbstring \
-    && docker-php-ext-install zip \
-    && docker-php-ext-install soap \
-    && docker-php-ext-install opcache \
-    && docker-php-ext-configure intl \
-    && docker-php-ext-install intl \
-    && apt-get install nodejs npm -yqq
+RUN docker-php-ext-install pdo_mysql
+RUN docker-php-ext-install mbstring
+RUN docker-php-ext-install zip
+RUN docker-php-ext-install soap
+RUN docker-php-ext-install opcache
+RUN docker-php-ext-configure intl
+RUN docker-php-ext-install intl
+RUN apt-get install nodejs -yqq
+RUN apt-get install npm -yqq
 
 # install xdebug
 RUN pecl install xdebug \
