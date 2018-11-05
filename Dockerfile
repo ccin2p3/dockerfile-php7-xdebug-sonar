@@ -11,7 +11,7 @@ RUN docker-php-ext-install pdo_mysql \
     && docker-php-ext-install opcache \
     && docker-php-ext-configure intl \
     && docker-php-ext-install intl \
-    && apt-get install -y nodejs npm
+    && apt-get install nodejs npm -yqq
 
 # install xdebug
 RUN pecl install xdebug \
