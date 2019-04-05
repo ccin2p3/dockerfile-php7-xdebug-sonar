@@ -11,6 +11,7 @@ RUN docker-php-ext-install pdo_mysql \
     && docker-php-ext-install opcache \
     && docker-php-ext-configure intl \
     && docker-php-ext-install intl
+    && docker-php-ext-install gd
 
 RUN curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
 RUN apt-get install nodejs npm -yqq
